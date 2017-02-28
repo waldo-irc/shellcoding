@@ -55,6 +55,8 @@ Plans to integrate everything toghether in the future and pipe to cfuzz
         mov al, 11
 
         int 0x80
+####If we wanted to add arguments (for example for a /bin/cat shellcode) you'd simply add the argument right after it says ";add your additional argument here" and uncomment the 3 lines after it.
+
 
 ##Chex
     root@kali:~/shellcoding# chex test
