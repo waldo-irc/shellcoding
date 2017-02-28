@@ -75,3 +75,12 @@ Just a collection of scripts to help out with basic custom shellcoding.  For edu
     uid=0(root) gid=0(root) groups=0(root)
 
 ####This automatically compiles your asm file, generates some hex, and gives you the length.
+
+##plt
+    root@kali:~# plt vuln -f system
+
+    1 PLT(s) found.
+
+    \x80\x83\x04\x08 <system@plt>
+####Quickly finds all plts with just 'plt ./program'.  -f can search for specific plts.
+
