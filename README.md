@@ -77,32 +77,31 @@ Just a collection of scripts to help out with basic custom shellcoding.  For edu
 ####This automatically compiles your asm file, generates some hex, and gives you the length.
 
 ##Plt
-    root@kali:~# plt vuln -f system
 
-    1 PLT(s) found.
-
-    \x80\x83\x04\x08 <system@plt>
-
-    root@kali:~# plt vuln
+    root@kali:~/shellcoding# ./plt ../vuln
 
     8 PLT(s) found.
 
-    \xb0\x83\x04\x08 <putchar@plt+0x10>
+    \xb0\x83\x04\x08 <putchar@plt+0x10> [0x80483b0]
 
-    \x90\x83\x04\x08 <__libc_start_main@plt>
+    \x90\x83\x04\x08 <__libc_start_main@plt> [0x8048390]
 
-    \x60\x83\x04\x08 <strcpy@plt>
+    \x60\x83\x04\x08 <strcpy@plt> [0x8048360]
 
-    \x70\x83\x04\x08 <puts@plt>
+    \x70\x83\x04\x08 <puts@plt> [0x8048370]
 
-    \x50\x83\x04\x08 <printf@plt>
+    \x50\x83\x04\x08 <printf@plt> [0x8048350]
 
-    \x50\x83\x04\x08 <printf@plt>
+    \x50\x83\x04\x08 <printf@plt> [0x8048350]
 
-    \xa0\x83\x04\x08 <putchar@plt>
+    \xa0\x83\x04\x08 <putchar@plt> [0x80483a0]
 
-    \x80\x83\x04\x08 <system@plt>
+    \x80\x83\x04\x08 <system@plt> [0x8048380]
 
+    root@kali:~/shellcoding# ./plt ../vuln -f system
 
+    1 PLT(s) found.
+
+    \x80\x83\x04\x08 <system@plt> [0x8048380]
 ####Quickly finds plts.
 
