@@ -41,7 +41,7 @@ try:
                 y = 0
         liner = ''.join(finalcount[::-1])
         t = iter(liner)
-        print '\\x' + '\\x'.join(a+b for a,b in zip(t, t)) + ' ' + line.split()[1]
+        print '\\x' + '\\x'.join(a+b for a,b in zip(t, t)) + ' ' + line.split()[1] + ' [0x' + line.split()[0] + ']'
         finalcount = []
 except IndexError:
     print "PLT you searched for wasn't found."
