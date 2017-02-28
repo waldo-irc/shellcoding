@@ -76,11 +76,33 @@ Just a collection of scripts to help out with basic custom shellcoding.  For edu
 
 ####This automatically compiles your asm file, generates some hex, and gives you the length.
 
-##plt
+##Plt
     root@kali:~# plt vuln -f system
 
     1 PLT(s) found.
 
     \x80\x83\x04\x08 <system@plt>
-####Quickly finds all plts with just 'plt ./program'.  -f can search for specific plts.
+
+    root@kali:~# plt vuln
+
+    8 PLT(s) found.
+
+    \xb0\x83\x04\x08 <putchar@plt+0x10>
+
+    \x90\x83\x04\x08 <__libc_start_main@plt>
+
+    \x60\x83\x04\x08 <strcpy@plt>
+
+    \x70\x83\x04\x08 <puts@plt>
+
+    \x50\x83\x04\x08 <printf@plt>
+
+    \x50\x83\x04\x08 <printf@plt>
+
+    \xa0\x83\x04\x08 <putchar@plt>
+
+    \x80\x83\x04\x08 <system@plt>
+
+
+####Quickly finds plts.
 
