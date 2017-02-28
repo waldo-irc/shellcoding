@@ -7,9 +7,9 @@ fi
 
 nasm -f elf "$1".asm
 ld -o "$1" "$1".o
-if [ ! -f /root/bin/waldo/hex ]; then
+if [ ! -f /path/to/hex ]; then
     exit 0
 else
-    /root/bin/waldo/hex "$1"
+    /path/to/hex "$1"
 fi
 rm "$1".o
