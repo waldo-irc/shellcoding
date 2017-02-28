@@ -1,5 +1,5 @@
 # shellcoding
-Just a collection of scripts to help out with basic custom shellcoding.
+Just a collection of scripts to help out with basic custom shellcoding.  For educational purposes.
 
 - Plans to integrate everything together in the future and pipe to cfuzz.
 
