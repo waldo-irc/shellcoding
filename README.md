@@ -32,7 +32,6 @@ Plans to integrate everything toghether in the future and pipe to cfuzz
 
         ;add your payload here
 
-####Our /bin//sh from before
         push 0x68732f2f
 
         push 0x6e69622f
