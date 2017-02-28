@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Filename required wihout .asm."
+    exit 0
+fi
+
+nasm -f elf "$1".asm
+ld -o "$1" "$1".o
+if [ ! -f /root/bin/waldo/hex ]; then
+    exit 0
+else
+    /root/bin/waldo/hex "$1"
+fi
+rm "$1".o

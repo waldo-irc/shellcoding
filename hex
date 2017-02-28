@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Filename required."
+    exit 0
+fi
+
+x=0
+
+for i in $(objdump -d "$1" |grep "^ " |cut -f2); do
+    echo -n '\x'$i;
+    let "x++"
+done; echo
+echo "Shellcode is $x bytes long"
+

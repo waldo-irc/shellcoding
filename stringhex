@@ -1,0 +1,42 @@
+#!/usr/bin/python
+import sys,struct
+x=0
+hexlist = []
+fulllist = []
+count = []
+
+if len(sys.argv) == 1:
+    print "[X] Need a string to hex encode for your shellcode."
+    exit(0)
+elif sys.argv[1] == "--help" or sys.argv[1] == "-help" or sys.argv[1] == "-h":
+    print "[*] Run with - ex: strinhex /bin//sh"
+    exit(0)
+
+for word in sys.argv:
+    if word is not sys.argv[0]:
+        for i in word:
+            x+=1
+        #check if the word we supplied is a multiple of 4, otherwise exit.
+        if x%4 == 0:
+            x=0
+            pass
+        else:
+            print "Each string must be a multiple of 4."
+            exit(0)
+        #for each char in the word increment until 4 chars have been reached, this is the first word.
+        for i in word:
+            x+=1
+            hexlist.append(i)
+            if x == 4:
+                fulllist.append(''.join(hexlist))
+                hexlist = []
+                x=0
+        hex = "\\x" + "\\x".join("{:02X}".format(ord(c)) for c in word[::-1])
+        print "Hex for string '%s' is: %s" %  (word, hex)
+        for char in fulllist[::-1]:
+            print '%s: push 0x' % char + char[::-1].encode("hex")
+        print "[**] Copy and paste the below directly into the .asm."
+        for char in fulllist[::-1]:
+            print '    push 0x' + char[::-1].encode("hex")
+        fulllist = []
+        print '\n'

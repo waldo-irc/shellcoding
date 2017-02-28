@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Filename required for creation, don't add the .asm (done automaticall)."
+    exit 0
+fi
+
+echo 'global _start' > "$1".asm
+echo '_start:' >> "$1".asm
+echo '' >> "$1".asm
+echo '    xor eax, eax' >> "$1".asm
+echo '    push eax' >> "$1".asm
+echo '    ;add your payload here' >> "$1".asm
+echo '    mov ebx, esp' >> "$1".asm
+echo '    push eax' >> "$1".asm
+echo '    ;add your additional argument here' >> "$1".asm
+echo '    ;mov ecx, esp' >> "$1".asm
+echo '    ;push eax' >> "$1".asm
+echo '    ;push ecx' >> "$1".asm
+echo '    push ebx' >> "$1".asm
+echo '    mov ecx, esp' >> "$1".asm
+echo '    mov al, 11' >> "$1".asm
+echo '    int 0x80' >> "$1".asm
