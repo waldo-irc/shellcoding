@@ -13,6 +13,9 @@ if [ "$CONTINUE" == "Y" ] | [ "$CONTINUE" == "y" ]; then
     cp dump "$1"
     cp plt "$1"
     cp newasm "$1"
+    path=$(echo "$1" | sed 's/\//\\\//g')
+    sed -i -e "s/\/path\/to\/hex/$path\/hex/g" "$1"/chex
+    echo "Done!  Read the README.md file to get some help if you don't know how to get started."
 else
     echo "exiting"
     exit 0
